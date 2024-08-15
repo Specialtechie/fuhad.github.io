@@ -3465,6 +3465,10 @@ input, select, textarea {
 				#header nav a[href="contact.html"] {
 					display: none; 
 				}
+				#header nav a[href="Experiences.html"] {
+					display: none; 
+				}
+				
 			}
 
 		/*small screenview*/
@@ -3472,7 +3476,40 @@ input, select, textarea {
 @media screen and (max-width: 480px) {
     /* Flexbox layout for inner divs */
     
-    #about-me .inner {
+    #banner1 .inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+	.image-sections {
+        display: none; /* Hide the image section on mobile devices */
+    }
+
+    .major {
+        flex-direction: column; /* Adjust flex direction for mobile if needed */
+    }
+
+	.text-sections {
+        width: 100%; /* Ensure the text section takes full width on mobile */
+        padding: 0 20px; /* Add some padding for better readability on mobile */
+    }
+
+    .contents h3, .contents p, .actions {
+        text-align: center; /* Center align the text and button */
+    }
+
+    .actions {
+        display: flex;
+        justify-content: center; /* Center the "Check My Resume" button */
+        margin-top: 20px; /* Add some spacing from the text */
+    }
+
+    .actions .button {
+        width: 100%; /* Make the button full-width on mobile */
+        max-width: 300px; /* Limit the maximum width of the button */
+    }
+	#about-me .inner {
         display: flex;
         flex-direction: column;
         align-items: center;
