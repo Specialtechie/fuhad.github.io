@@ -3490,14 +3490,17 @@ input, select, textarea {
         flex-direction: column; /* Adjust flex direction for mobile if needed */
     }
 
-	.text-sections {
-        width: 100%; /* Ensure the text section takes full width on mobile */
-        padding: 0 20px; /* Add some padding for better readability on mobile */
-    }
+	
+    .text-sections {
+    width: 100%; /* Ensure the text section takes full width */
+}
 
-    .contents h3, .contents p, .actions {
-        text-align: center; /* Center align the text and button */
-    }
+.contents h3, .contents p {
+    text-align: center; /* Center align the text */
+    padding: 0 30px; /* Add 30px padding on the left and right */
+    margin: 0 auto; /* Center the elements horizontally */
+}
+
 
     .actions {
         display: flex;
