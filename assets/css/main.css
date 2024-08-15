@@ -3491,9 +3491,11 @@ input, select, textarea {
     }
 
 	
-    .text-sections {
-    width: 100%; /* Ensure the text section takes full width */
-}
+   .text-sections {
+        width: 100%; /* Ensure the text section takes full width on mobile */
+        padding: 0 20px; /* Add some padding for better readability on mobile */
+    }
+
 
 .contents h3, .contents p {
     text-align: center; /* Center align the text */
