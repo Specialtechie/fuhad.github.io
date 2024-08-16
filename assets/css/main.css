@@ -1775,6 +1775,7 @@ input, select, textarea {
 		width: -ms-max-content;
 		width: max-content;
 		margin-bottom: 2em;
+		
 	}
 
 		header.major > :first-child {
@@ -1808,7 +1809,10 @@ input, select, textarea {
 		}
 
 	@media screen and (max-width: 736px) {
-
+		
+		header.major {
+			margin-bottom: 10px; /* Reduce space below the header */
+		}
 		header.major > p br {
 			display: none;
 		}
@@ -3169,12 +3173,13 @@ input, select, textarea {
 		left: 0;
 		letter-spacing: 0.25em;
 		line-height: 3.25em;
-		margin: 0;
+		margin-bottom: 5px;
 		position: fixed;
 		text-transform: uppercase;
 		top: 0;
 		width: 100%;
 		z-index: 10000;
+
 	}
 
 		#header .logo {
@@ -3398,6 +3403,7 @@ input, select, textarea {
 			#header {
 				height: 2.75em;
 				line-height: 2.75em;
+				margin-bottom: 10px;
 			}
 
 				#header .logo {
@@ -3431,6 +3437,9 @@ input, select, textarea {
 		}
 
 		@media screen and (max-width: 480px) {
+			#header {
+				margin-bottom: 5px;
+			}
 
 			#header .logo span {
 				display: none;
@@ -3471,171 +3480,23 @@ input, select, textarea {
 				
 			}
 
-		/*small screenview*/
-/* Adjustments for smaller screens */
-@media screen and (max-width: 480px) {
-    /* Flexbox layout for inner divs */
-    
-    #banner1 .inner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-	.image-sections {
-        display: none; /* Hide the image section on mobile devices */
-    }
-
-    .major {
-        flex-direction: column; /* Adjust flex direction for mobile if needed */
-    }
-
-	
-   .text-sections {
-        width: 100%; /* Ensure the text section takes full width on mobile */
-        padding: 0 20px; /* Add some padding for better readability on mobile */
-    }
-
-
-.contents h3, .contents p {
-    text-align: center; /* Center align the text */
-    padding: 0 30px; /* Add 30px padding on the left and right */
-    margin: 0 auto; /* Center the elements horizontally */
-}
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.portfolio-item {
-    position: relative;
-    overflow: hidden;
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.portfolio-item .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.portfolio-item:hover .overlay {
-    opacity: 1;
-}
-
-/* Mobile view adjustments */
-@media (max-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr; /* Switch to a single column layout */
-        gap: 10px;
-    }
-
-    .portfolio-item {
-        margin-bottom: 10px; /* Add space between items */
-    }
-
-    .portfolio-item img {
-        width: 100%;
-        height: auto;
-    }
-
-    .overlay {
-        font-size: 1.2em; /* Adjust text size for mobile readability */
-        padding: 10px; /* Add padding for better spacing */
-    }
-
-    .actions {
-        display: flex;
-        justify-content: center; /* Center the "Check My Resume" button */
-        margin-top: 20px; /* Add some spacing from the text */
-    }
-
-    .actions .button {
-        width: 100%; /* Make the button full-width on mobile */
-        max-width: 300px; /* Limit the maximum width of the button */
-    }
-	#about-me .inner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-	#professional-skills-and-projects .inner {
-		display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-	}
-	.skills-section h2 {
-		max-width: 100%;
-		height: auto;
-	}
-	.projects-section h2 {
-		max-width: 100%;
-		height: auto;
-	}
-
-    /* Adjust padding and spacing */
-    #banner1 .inner,
-    #about-me .inner,
-    #professional-skills-and-projects .inner {
-        padding: 10px;
-    }
-
-    /* Adjust image width for smaller screens */
-    .image-section img {
-        max-width: 100%;
-        height: auto;
-    }
-	.image-sections img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    /* Adjust font sizes for smaller screens*/
-     h2, h3, p, ul {
-        font-size: 16px;
-    }
-	h1 {
-		font-size: 18px;
-	}
-	
-}
-
-
-
-/* Banner */
+		/* General Styles for Desktop */
 #banner1 {
     padding: 20px;
-    overflow: hidden; /* Clear floats */
+    overflow: hidden;
+	margin-top: 0; /* Reset margin-top if there's unwanted space */
 }
 
 .text-sections {
     float: left;
-    width: calc(50% - 10px); /* Adjusted width to account for margin */
+    width: 50%;
+    padding-right: 20px;
 }
 
 .image-sections {
     float: right;
-    width: calc(40%); /* Adjusted width to account for margin */
-	padding-right: 30px;
-	
+    width: 40%;
+    padding-right: 30px;
 }
 
 /* Clearfix for float elements */
@@ -3649,112 +3510,209 @@ input, select, textarea {
     margin-bottom: 20px;
 }
 
-.me img {
+.me img,
+.image-sections img {
     max-width: 100%;
     height: auto;
 }
 
+/* Responsive Styles for Mobile View */
+@media screen and (max-width: 768px) {
+    /* Flexbox layout for inner divs */
+    #banner1 .inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .image-sections {
+        display: none; /* Hide the image section on mobile devices */
+    }
 
-#banner {
+    .text-sections {
+        width: 100%; /* Ensure the text section takes full width on mobile */
+        padding: 0 20px; /* Add padding for better readability on mobile */
+    }
+
+    .contents h3, .contents p, .actions {
+        text-align: center; /* Center align the text and button */
+    }
+    
+    .actions {
+        display: flex;
+        justify-content: center; /* Center the "Check My Resume" button */
+        margin-top: 20px; /* Add spacing from the text */
+    }
+
+    .actions .button {
+        width: 100%; /* Make the button full-width on mobile */
+        max-width: 300px; /* Limit the maximum width of the button */
+    }
+}
+
+/* Further Adjustments for Very Small Screens */
+@media screen and (max-width: 480px) {
+    #banner1 {
+        padding: 6em 0 2em 0;
+    }
+
+    #banner1 > .inner .content p br {
+        display: none;
+    }
+
+    #banner1.major {
+        padding: 8em 0 4em 0;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    h2, h3, p, ul {
+        font-size: 16px;
+    }
+}
+
+
+/* About Me Section */
+#about-me {
+    background-color: #dde4ec;
+    padding-left: 30px;
+    padding-right: 30px;
+    overflow: hidden; /* Clear floats */
+}
+
+#about-me .inner {
     display: flex;
     align-items: center;
-    background-image: url("../../images/banner.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-bottom: 0 !important;
-    cursor: default;
-    height: 60vh; /* You can adjust the height as needed */
-    margin-bottom: -3.25em;
-    max-height: 32em;
-    min-height: 22em;
-    position: relative;
-    top: -3.25em;
+    justify-content: center; /* Center content horizontally */
+    flex-direction: row; /* Default to row for desktop view */
 }
 
-#banner .inner {
-    display: flex;
-    width: 100%; /* Ensure the inner container takes full width */
-    padding: 0 !important;
-    position: relative;
-    z-index: 2;
-}
-
-#banner .text-section,
-#banner .image-section {
+#about-me .image-section {
     flex: 1;
-}
-#banner .text-section {
-	float: left;
-	width: 60px;
-}
-#banner .image-section {
-	float: right;
-	width: 40px;
-    margin-left: 20px; /* Add some space between text and image */
+    margin-right: 20px; /* Add space between image and text */
 }
 
-#banner h1 {
-    font-size: 3.25em;
+#about-me .text-section {
+    flex: 2;
+    color: #242943;
+    font-weight: bold;
 }
 
-#banner .content {
+#about-me h2 {
+    color: #242943;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#about-me p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    #about-me .inner {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center; /* Center-align text content */
+    }
+
+    #about-me .image-section {
+        margin-right: 0; /* Remove right margin when stacked */
+        margin-bottom: 20px; /* Add space below the image */
+		
+    }
+
+    #about-me .text-section {
+        padding: 0 15px; /* Add padding for better readability */
+    }
+
+    #about-me h2 {
+        font-size: 1.3em; /* Slightly reduce font size */
+    }
+
+    #about-me p {
+        font-size: 0.9em; /* Slightly reduce font size */
+    }
+}
+
+/* Professional Skills and Projects Section */
+#professional-skills-and-projects {
+    background-color: #dde4ec;
+    overflow: hidden; /* Clear floats */
+    padding: 20px 20px 10px;
+    position: relative;
+}
+
+#professional-skills-and-projects .inner {
     display: flex;
-    align-items: center;
-    margin: 0 0 2em 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-#banner .content > * {
-    margin-right: 1.5em;
-    margin-bottom: 0;
+#professional-skills-and-projects .skills-section,
+#professional-skills-and-projects .projects-section {
+    flex: 1;
+    margin: 10px;
 }
 
-#banner .content > :last-child {
-    margin-right: 0;
+#professional-skills-and-projects h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #242943;
+    padding: 0 30px;
 }
 
-#banner .content p {
-    font-size: 0.7em;
-    font-weight: 600;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
+#professional-skills-and-projects ul {
+    list-style: none;
+    padding: 0 30px;
+    text-align: left;
 }
 
-#banner.major {
-    height: 75vh;
-    min-height: 30em;
-    max-height: 50em;
+#professional-skills-and-projects ul li {
+    margin-bottom: 5px;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #242943;
+    color: #fff;
+    border-radius: 4px;
 }
 
-#banner.major.alt {
-    opacity: 0.75;
+#professional-skills-and-projects ul li:hover {
+    background-color: #0056b3;
 }
 
-/* Change background color styles as needed */
-#banner.style1:after {
-    background-color: #6fc3df;
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    #professional-skills-and-projects .inner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #professional-skills-and-projects .skills-section,
+    #professional-skills-and-projects .projects-section {
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    #professional-skills-and-projects h2 {
+        font-size: 1.3em;
+    }
+
+    #professional-skills-and-projects ul li {
+        width: 100%;
+        text-align: center;
+    }
 }
 
-#banner.style2:after {
-    background-color: #8d82c4;
-}
 
-#banner.style3:after {
-    background-color: #ec8d81;
-}
 
-#banner.style4:after {
-    background-color: #e7b788;
-}
 
-#banner.style5:after {
-    background-color: #8ea9e8;
-}
 
-#banner.style6:after {
-    background-color: #87c5a4;
-}
+
+
 
 /*work*/
 #work {
@@ -3796,102 +3754,7 @@ ul {
     padding-left: 20px;
 }
 
-/*About me*/
-#about-me {
-    background-color: #dde4ec;
-    padding-left: 30px;
-	padding-right: 30px;
-    overflow: hidden; /* Clear floats */
-}
 
-
-
-
-#about-me .inner {
-    display: flex;
-    align-items: center;
-}
-
-#about-me .image-section {
-    flex: 1;
-    margin-right: 20px; /* Add some space between sections */
-}
-
-#about-me .text-section {
-    flex: 2;
-	color: #242943;
-	font-weight: bold;
-}
-
-#about-me h2 {
-	color: #242943;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-#about-me p {
-    font-size: 1em;
-    line-height: 1.5;
-}
-
-#professional-skills-and-projects {
-    background-color: #dde4ec;
-    overflow: hidden; /* Clear floats */
-	padding: 20px 20px 10px; /* Adjusted padding */
-    position: relative; /* Set the container to relative positioning */
-}
-
-#professional-skills-and-projects .inner {
-    display: flex;
-}
-
-#professional-skills-and-projects .skills-section,
-#professional-skills-and-projects .projects-section {
-    flex: 1;
-}
-
-#professional-skills-and-projects h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-	color: #242943;
-	padding-left: 30px;
-	padding-right: 30px;
-    
-    top: 0px; /* Distance from the top of the container */
-}
-#professional-skills-and-projects p {
-	color: #242943;
-	padding-top: 15px;
-	padding-left: 30px;
-	padding-right: 30px;
-}
-
-#professional-skills-and-projects ul {
-    list-style: none;
-    padding-left: 30px;
-	padding-right: 30px;
-	text-align: top;
-	
-}
-
-#professional-skills-and-projects ul li {
-    margin-bottom: 5px;
-
-}
-
-/* Style project list items as buttons */
-#professional-skills-and-projects ul li {
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: #242943; /* Blue color, adjust as needed */
-    color: #fff; /* White text color */
-    border-radius: 4px;
-    text-decoration: none; /* Remove default underline */
-}
-
-#professional-skills-and-projects ul li:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
 
 /*projects*/
 .proj {
@@ -3905,21 +3768,7 @@ ul {
 }
 
 
-		@media screen and (max-width: 480px) {
-
-			#banner1 {
-				padding: 6em 0 2em 0 ;
-			}
-
-				#banner1 > .inner .content p br {
-					display: none;
-				}
-
-				#banner1.mayor {
-					padding: 8em 0 4em 0 ;
-				}
-
-		}
+		
 
 /* Main */
 
