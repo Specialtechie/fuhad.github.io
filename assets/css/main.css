@@ -3503,6 +3503,62 @@ input, select, textarea {
     margin: 0 auto; /* Center the elements horizontally */
 }
 
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.portfolio-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Switch to a single column layout */
+        gap: 10px;
+    }
+
+    .portfolio-item {
+        margin-bottom: 10px; /* Add space between items */
+    }
+
+    .portfolio-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .overlay {
+        font-size: 1.2em; /* Adjust text size for mobile readability */
+        padding: 10px; /* Add padding for better spacing */
+    }
 
     .actions {
         display: flex;
