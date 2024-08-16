@@ -4292,56 +4292,69 @@ ul {
 			font-family: Arial, sans-serif;
 		}
 		
-		.portfolio-grid {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 20px;
-			padding: 20px;
-			padding-left: 70px;
-			padding-right: 70px;
-		}
-		
-		.portfolio-item {
-			position: relative;
-			overflow: hidden;
-			border-radius: 10px;
-		}
-		
-		.portfolio-item img {
-			width: 100%;
-			height: auto;
-			display: block;
-			transition: transform 0.5s ease;
-		}
-		
-		.portfolio-item:hover img {
-			transform: scale(1.1);
-		}
-		
-		.overlay {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(36, 41, 67, 0.9);
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			opacity: 0;
-			transition: opacity 0.5s ease;
-		}
-		
-		.portfolio-item:hover .overlay {
-			opacity: 1;
-		}
-		
-		.text {
-			color: #9bf1ff;
-			font-size: 1.5em;
-			text-align: center;
-			padding: 10px;
-			background-color: rgba(36, 41, 67, 0.9);
-			border-radius: 10px;
-		}
-		
+		/* Portfolio grid for desktop view */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+
+/* Portfolio grid for mobile view */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        display: block;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .portfolio-item {
+        margin-bottom: 20px;
+    }
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(36, 41, 67, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    color: #9bf1ff;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(36, 41, 67, 0.9);
+    border-radius: 10px;
+}
