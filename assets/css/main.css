@@ -3525,11 +3525,14 @@ input, select, textarea {
         align-items: center;
         text-align: center;
     }
-    
+	
     .image-sections {
         display: none; /* Hide the image section on mobile devices */
     }
-
+	
+    header.major h1 {
+        font-size: 2.5em; /* Adjust font size for mobile */
+    }
     .text-sections {
         width: 100%; /* Ensure the text section takes full width on mobile */
         padding: 0 20px; /* Add padding for better readability on mobile */
@@ -3564,7 +3567,13 @@ input, select, textarea {
     #banner1.major {
         padding: 8em 0 4em 0;
     }
+    header.major h1 {
+        font-size: 2em; /* Further reduce font size for very small screens */
+    }
 
+    header.major {
+        margin-bottom: 5px; /* Further reduce space below the header */
+    }
     h1 {
         font-size: 25px;
 	text-align: center;
