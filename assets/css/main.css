@@ -3735,7 +3735,7 @@ input, select, textarea {
 
 
 h2, .section-title {
-    font-size: 1.5em;
+    font-weight: bold;
     color: #eaeff3;
     border-bottom: 2px solid #e8ebef;
     padding-bottom: 10px;
